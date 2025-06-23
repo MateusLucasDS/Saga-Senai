@@ -2,8 +2,11 @@ body{
     background-color: #F1FAEE;
 }
 
-head{
+header{
     background-color: #d1f3ff;
+    div{
+        display: inline-block;
+    }
 }
 
 h1{
