@@ -24,13 +24,15 @@ header{
     margin-left: 0px;
     margin-right: 0px;
     }
-
-    p{
+    div{
+        p{
         text-align: center;
         display: inline-block;
         margin-left: 10px;
         margin-right: 10px;
+        }   
     }
+    
 }
 
 main{
