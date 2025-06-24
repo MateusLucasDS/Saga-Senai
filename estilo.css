@@ -1,11 +1,17 @@
 body{
-    background-color: #F1FAEE;
+    background-color: black;
 }
 
 header{
     background-color: #d1f3ff;
+    h1{
+        margin-top: 10px;
+    }
     p{
+        text-align: center;
         display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
