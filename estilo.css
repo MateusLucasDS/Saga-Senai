@@ -26,6 +26,8 @@ header{
     }
     div{
         display: inline-block;
+        margin: auto;
+
         p{
         display: inline-block;
         text-align: center;
