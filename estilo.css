@@ -1,9 +1,14 @@
 body{
     background-color: #162d48;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
 }
 
 header{
-    background-color: #d5352f;
+    background-color: #737887;
 
     img{
         width: 150px;
