@@ -14,6 +14,7 @@ header{
         width: 125px;
         height: auto;
         margin: auto;
+        display: block;
     }
 
     h1{
