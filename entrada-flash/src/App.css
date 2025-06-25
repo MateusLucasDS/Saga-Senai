@@ -1,0 +1,72 @@
+body{
+    background-color: #162d48;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: #ffbd59;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 0px;
+    
+      nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* espaço egit initntre os botões */
+      margin-top: 10px;
+      }
+
+      nav button {
+      background-color: #ffbd59; /* mesma cor do header */
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    nav button:hover {
+    background-color: #ffa115; /* tom mais escuro no hover */
+  }
+
+    img{
+        width: 200px;
+        height: auto;
+        margin: auto;
+        display: block;
+    }
+
+    h1{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    }
+    div{
+        display: inline-block;
+        margin: auto;
+
+        p{
+        display: inline-block;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        }   
+    }
+    
+}
+
+main{
+    background-color: white;
+}
