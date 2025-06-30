@@ -1,6 +1,10 @@
 import './App.css';
 import { useState } from 'react';
 import logotipo from './assets/logotipo.png';
+import Inicio from './components/Inicio';
+import Programa from './components/Programa';
+import Ajustes from './components/Ajustes';
+
 
 function App() {
   const [tela, setTela] = useState('inicio');
@@ -18,13 +22,13 @@ function App() {
       </header>
 
       <main>
-        {tela === 'inicio' && <h1>Bem-vindo ao Flash!</h1>}
-        {tela === 'programa' && <h1>Programa</h1>}
-        {tela === 'ajustes' && <h1>Ajustes</h1>}
+        {tela === 'inicio' && <Inicio />}
+        {tela === 'programa' && <Programa />}
+        {tela === 'ajustes' && <Ajustes />}
       </main>
 
       <footer>
-        <p>© 2025 - Seu Projeto</p>
+        <p>© 2025 - Entrada Flash</p>
       </footer>
     </div>
   );
