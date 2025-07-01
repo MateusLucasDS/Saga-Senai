@@ -28,7 +28,7 @@ function App() {
       </main>
 
       <footer>
-        <p>© 2025 - Entrada Flash.</p>
+        <p>© 2025 - Entrada Flash</p>
       </footer>
     </div>
   );
