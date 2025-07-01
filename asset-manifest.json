@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Saga-Senai/static/css/main.90f4f833.css",
-    "main.js": "/Saga-Senai/static/js/main.64b456de.js",
+    "main.js": "/Saga-Senai/static/js/main.55063247.js",
     "static/js/453.5fc6996f.chunk.js": "/Saga-Senai/static/js/453.5fc6996f.chunk.js",
     "static/media/logotipo.png": "/Saga-Senai/static/media/logotipo.c340fb1c2da8e29b28a6.png",
     "index.html": "/Saga-Senai/index.html",
     "main.90f4f833.css.map": "/Saga-Senai/static/css/main.90f4f833.css.map",
-    "main.64b456de.js.map": "/Saga-Senai/static/js/main.64b456de.js.map",
+    "main.55063247.js.map": "/Saga-Senai/static/js/main.55063247.js.map",
     "453.5fc6996f.chunk.js.map": "/Saga-Senai/static/js/453.5fc6996f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90f4f833.css",
-    "static/js/main.64b456de.js"
+    "static/js/main.55063247.js"
   ]
 }
