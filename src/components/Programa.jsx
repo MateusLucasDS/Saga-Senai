@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { CameraContext } from './CameraContext';
 
 export default function Programa() {
+  const { selectedDeviceId } = useContext(CameraContext);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [resultado, setResultado] = useState('');
@@ -8,8 +10,13 @@ export default function Programa() {
 
   useEffect(() => {
     async function startCamera() {
+      if (!selectedDeviceId) return;
+
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { deviceId: { exact: selectedDeviceId } },
+        });
+
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
@@ -19,7 +26,7 @@ export default function Programa() {
     }
 
     startCamera();
-  }, []);
+  }, [selectedDeviceId]);
 
   const capturarImagem = async () => {
     const video = videoRef.current;
