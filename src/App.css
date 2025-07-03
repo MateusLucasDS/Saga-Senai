@@ -1,110 +1,149 @@
-body{
-    background-color: #d5352f;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 0px;
-    font-family: 'Times New Roman', Times, serif;
+/* GLOBAL */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #d5352f;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-header{
-    background-color: #ffbd59;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    padding-bottom: 0px;
-    
-      nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px; /* espaço egit initntre os botões */
-      margin-top: 10px;
-      }
-
-      nav button {
-      background-color: #ffbd59; /* mesma cor do header */
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      border-radius: 5px;
-    }
-
-    nav button:hover {
-    background-color: #ffa115; /* tom mais escuro no hover */
-  }
-
-    img{
-        width: 200px;
-        height: auto;
-        margin: auto;
-        display: block;
-    }
-
-    h1{
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    }
-    div{
-        display: inline-block;
-        margin: auto;
-
-        p{
-        display: inline-block;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
-        }   
-    }
-    
+*, *::before, *::after {
+  box-sizing: inherit; /* ⬅ evita que padding estoure o layout */
 }
 
-main{
-    background-color:white;
-    min-height: 100vh;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-    h1{
-        text-align: center;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
-        font-size: 35px;
-    }
-    }
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffbd59;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 
-section {
-  padding: 5px 40px;
+header img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0 10px;
+}
+
+header nav button {
+  background-color: #ffbd59;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+header nav button:hover {
+  background-color: #ffa115;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  margin: 120px auto 0; /* espaço abaixo do header fixo */
+  padding: 2rem;
+  padding-top: 60px;
+  width: 100%;
   max-width: 900px;
-  margin: 5px;
-  background: #fff;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: left;
+
+  h1{
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+
+/* SECTION */
+section {
+  width: 100%;
+  max-width: 900px;
+  margin: 5px auto 10px;
+  padding: 1rem 2rem;
+  background-color: #fff;
   border-radius: 10px;
-  margin-bottom: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-} 
+}
 
 section h2 {
-  margin-bottom: 2px;
+  margin-bottom: 0.5rem;
 }
 
 section ul, section ol {
-  padding-left: 20px;
+  padding-left: 1.5rem;
 }
 
-footer{
-    margin: 0px;
-    padding: 10px;
-    background-color: #ffbd59
+/* FOOTER */
+footer {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffbd59;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  border-top: 1px solid #ccc;
+}
+
+/* MEDIA QUERY */
+@media (min-width: 768px) {
+  body {
+    background-image: url('./assets/patio.jpg');
+    background-size: cover;
+    background-position: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+  }
+
+  .secao {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  nav button {
+    margin: 0 0.5rem;
+    padding: 0.6rem 1.2rem;
+  }
 }

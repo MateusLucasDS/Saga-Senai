@@ -9,14 +9,22 @@ export default function Programa() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    let currentStream;
+
     async function startCamera() {
       if (!selectedDeviceId) return;
 
       try {
+        // Encerra stream anterior
+        if (videoRef.current?.srcObject) {
+          videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+        }
+
         const stream = await navigator.mediaDevices.getUserMedia({
           video: { deviceId: { exact: selectedDeviceId } },
         });
 
+        currentStream = stream;
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
@@ -26,6 +34,12 @@ export default function Programa() {
     }
 
     startCamera();
+
+    return () => {
+      if (currentStream) {
+        currentStream.getTracks().forEach(track => track.stop());
+      }
+    };
   }, [selectedDeviceId]);
 
   const capturarImagem = async () => {
@@ -79,7 +93,8 @@ export default function Programa() {
         ref={videoRef}
         autoPlay
         playsInline
-        style={{ width: '100%', maxWidth: '600px', borderRadius: '8px', marginBottom: '1rem' }}
+        muted
+        style={{ width: '100%', maxWidth: '600px', borderRadius: '8px', marginBottom: '1rem', background: '#000' }}
       />
       <canvas ref={canvasRef} style={{ display: 'none' }} />
       <br />
