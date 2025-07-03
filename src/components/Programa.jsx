@@ -12,17 +12,18 @@ export default function Programa() {
     let currentStream;
 
     async function startCamera() {
-      if (!selectedDeviceId) return;
-
       try {
-        // Encerra stream anterior
+        // Encerra stream anterior se existir
         if (videoRef.current?.srcObject) {
           videoRef.current.srcObject.getTracks().forEach(track => track.stop());
         }
 
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: { deviceId: { exact: selectedDeviceId } },
-        });
+        // Fallback: pede permissão genérica se nenhum device estiver selecionado
+        const constraints = selectedDeviceId
+          ? { video: { deviceId: { exact: selectedDeviceId } } }
+          : { video: true };
+
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
 
         currentStream = stream;
         if (videoRef.current) {
@@ -94,7 +95,13 @@ export default function Programa() {
         autoPlay
         playsInline
         muted
-        style={{ width: '100%', maxWidth: '600px', borderRadius: '8px', marginBottom: '1rem', background: '#000' }}
+        style={{
+          width: '100%',
+          maxWidth: '600px',
+          borderRadius: '8px',
+          marginBottom: '1rem',
+          background: '#000',
+        }}
       />
       <canvas ref={canvasRef} style={{ display: 'none' }} />
       <br />
